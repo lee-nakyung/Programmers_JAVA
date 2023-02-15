@@ -9,6 +9,7 @@ n	return
 5	6
 */
 
+
 class Solution {
     public int solution(int n) {
         int answer = 0;
