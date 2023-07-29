@@ -12,9 +12,9 @@ class Solution{
         
         ArrayDeque<String> cache= new ArrayDeque<>();
         
-        for(String city:cities){//O(N) N=100000
-            city=city.toUpperCase(); // O(N) 스트링의 길이가 최대 20 
-            if(cache.contains(city)){//O(N*M) 30*20*100000 , 히트
+        for(String city:cities){
+            city=city.toUpperCase();
+            if(cache.contains(city)){
                 answer+=HIT;
                 cache.remove(city);
                 cache.addLast(city);
@@ -22,7 +22,7 @@ class Solution{
             else{
                 answer+=MISS;
                 cache.addLast(city);
-                if(cache.size()>cacheSize)//캐시 사이즈를 초과하면 하나를 꺼낸다. 
+                if(cache.size()>cacheSize)
                     cache.pollFirst();
             }
         }
